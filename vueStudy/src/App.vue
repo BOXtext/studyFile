@@ -10,23 +10,23 @@
 <script>
 import './assets/iconfont.css'
 import $ from 'jquery'
-$(function () {
-    showScroll();
-    function showScroll() {
-        $(window).scroll(function () {
-            var scrollValue = $(window).scrollTop();
-            // console.log(scrollValue);
-            if(scrollValue >= 50) {
-              $('#top').fadeIn()
-            } else {
-              $('#top').fadeOut();
-            }
-        });
-        $('#scroll').click(function () {
-            $("html,body").animate({ scrollTop: 0 }, 200);
-        });
-    }
-});
+// $(function () {
+//     showScroll();
+//     function showScroll() {
+//         $(window).scroll(function () {
+//             var scrollValue = $(window).scrollTop();
+//             // console.log(scrollValue);
+//             if(scrollValue >= 50) {
+//               $('#top').fadeIn()
+//             } else {
+//               $('#top').fadeOut();
+//             }
+//         });
+//         $('#scroll').click(function () {
+//             $("html,body").animate({ scrollTop: 0 }, 200);
+//         });
+//     }
+// });
 export default {
   name: 'app'
 

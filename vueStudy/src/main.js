@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import Vuex from 'vuex'
+import store from './vuex/index.js'
 import http from 'vue-resource'
 import router from './router/index.js'
 import ElementUI from 'element-ui'
@@ -20,6 +21,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

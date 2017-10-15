@@ -3,6 +3,8 @@
 		<el-button type="primary" @click="toOPX"><i class="dladmin dli-kejian"></i>调往OPX页面</el-button>
 		<br>
 		<br>
+		<el-button type="primary" @click="toEcharts">调往Echarts测试页面</el-button>
+		<br>
 		<el-button type="primary" @click="toMongoDB">调往mongoDB页面</el-button>
 		<el-button type="primary" @click="toEchart">调往echarts页面</el-button>
 		<el-button type="primary" @click="toComponent">调往父子组件页面</el-button>
@@ -32,6 +34,9 @@ export default {
 
 	},
 	methods: {
+		toEcharts()  {
+			this.$router.push('testEcharts')
+		},
 		toOPX() {
 			this.$router.push('OPX')
 		},

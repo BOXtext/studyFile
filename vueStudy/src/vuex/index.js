@@ -1,30 +1,36 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import * as mutations from './mutations'
-import * as getters from './getters'
-import * as actions from './actions'
 
 Vue.use(Vuex)
-const state = {
-  count: 0
+
+const moduleA  = {
+	state: {
+		listF: [1],
+  	listS: []
+	},
+	mutations:{
+		incrementF(state, data) {
+			state.listF = data
+		},
+		incrementS(state, data) {
+			state.listS.push(data)
+		}
+	},
+	actions: {
+		incrementF(context,data) {
+			context.commit('incrementF',data)
+		},
+		incrementS(context,data) {
+			context.commit('incrementS',data)
+		},
+	}
 }
 
-const mutations = {
-
-}
-
-const actions ={
-
-}
-
-const getters = {
-
-}
 const store = new Vuex.Store({
-  state,
-  mutations,
-  actions,
-  getters
+  modules: {
+  	state1: moduleA
+  }
+
 })
 
 export default store

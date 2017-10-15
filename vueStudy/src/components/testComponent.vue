@@ -1,10 +1,16 @@
 <template lang="html">
 	<div class="">
-		<input type="text" name="name" v-model="name">{{name}}
-		<input type="text" name="name" v-model="age">{{age}}
-		<div class="" style="margin-top:20px; border: 1px solid red;">
-			<single-bind v-bind:my-name="name" v-bind:my-age="age"></single-bind>
-		</div>
+		 <p>父亲:给你{{ money }}元零花钱</p>
+        <single-bind :money="money" @repay="repay"></single-bind>
+        <br>
+        <button @click="add">那给你加100</button>
+        <p v-if="back" @repay="repay">儿子：超过300我不要，还给你 {{ back }}元</p>
+         <el-checkbox-group v-model="checkList">
+			    <el-checkbox label="复选框 A"></el-checkbox>
+			    <el-checkbox label="复选框 B"></el-checkbox>
+			    <el-checkbox label="复选框 C"></el-checkbox>
+			    <el-checkbox label="禁用" disabled></el-checkbox>
+			  </el-checkbox-group>
 	</div>
 </template>
 
@@ -17,8 +23,35 @@ export default {
 	},
 	data() {
 		return {
-			name: '11',
-	    age: '11'
+			money: 100,
+	    back: 0,
+	    checkList: []
+		}
+	},
+	watch: {
+		checkList: {handler: 'watchList', deep:true},
+		getListS(n, o) {
+			if(n) {
+				console.log(n)
+			}
+		},
+	},
+	computed: {
+		getListS() {
+			return this.$store.state.state1.listS
+		}
+	},
+	methods: {
+		watchList(n, o) {
+			if(n) {
+				this.$store.dispatch('incrementF', n)
+			}
+		},
+		repay(back) {
+			this.back = back;
+		},
+		add() {
+			this.money += 100
 		}
 	}
 }

@@ -1,28 +1,26 @@
 <template lang="html">
 	<div class="">
-		<el-button type="primary" @click="toOPX"><i class="dladmin dli-kejian"></i>调往OPX页面</el-button>
+		<!-- <el-button type="primary" @click="toOPX"><i class="dladmin dli-kejian"></i>调往OPX页面</el-button> -->
 		<br>
 		<br>
-		<el-button type="primary" @click="toEcharts">调往Echarts测试页面</el-button>
+		<!-- <el-button type="primary" @click="toEcharts">调往Echarts测试页面</el-button> -->
 		<br>
 		<el-button type="primary" @click="toMongoDB">调往mongoDB页面</el-button>
-		<el-button type="primary" @click="toEchart">调往echarts页面</el-button>
+		<!-- <el-button type="primary" @click="toEchart">调往echarts页面</el-button> -->
 		<el-button type="primary" @click="toComponent">调往父子组件页面</el-button>
 		<br>
-		<el-button type="primary" @click="ins">插入Echarts数据</el-button>
-		<el-button type="primary" @click="sel">获得Echarts数据</el-button>
-		<div class="">
-			<line-chart v-bind:id="chart" v-bind:series='series'>	</line-chart>
-		</div>
+		<br>
+		<el-button type="primary" @click="toElementTest">element测试页面</el-button>
+		<br>
+		<!-- <el-button type="primary" @click="ins">插入Echarts数据</el-button> -->
+		<!-- <el-button type="primary" @click="sel">获得Echarts数据</el-button> -->
 	</div>
 </template>
 
 <script>
-import lineChart from './lineChart.vue'
 export default {
 	name: 'Home',
 	components:{
-		lineChart
 	},
 	data() {
 		return {
@@ -34,6 +32,9 @@ export default {
 
 	},
 	methods: {
+		toElementTest() {
+			this.$router.push('testElement')
+		},
 		toEcharts()  {
 			this.$router.push('testEcharts')
 		},

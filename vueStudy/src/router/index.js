@@ -6,6 +6,7 @@ import LineChart from '@/components/childComponent/LineChart'
 import testComponent from '@/components/testComponent'
 import testEcharts from '@/components/testEcharts'
 import OPX from '@/components/forOPX'
+import testElement from '@/components/testElement'
 Vue.use(Router)
 
 export default new Router({
@@ -30,6 +31,10 @@ export default new Router({
         path: '/testEcharts',
         name: 'testEcharts',
         component: testEcharts
+    },{
+      path: '/testElement',
+      name: 'testElement',
+      component: testElement
     }
   ]
 })

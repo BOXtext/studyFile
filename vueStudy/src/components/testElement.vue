@@ -21,6 +21,7 @@
     </el-table>
    <el-pagination
    :current-change='pageChange' :page-size='5' :page-count="tableData.total"
+   :current-page='pageIndex'
     layout="prev, pager, next"
     >
   </el-pagination>
@@ -36,11 +37,8 @@
       		total: 0,
       		list:[]
       	},
-
-      }
-    },
-    mounted() {
-    	let  backData = [{
+      	pageIndex: 1,
+      	backData : [{
 	            date: '2016-05-02',
 	            name: '王小虎',
 	            address: '上海市普陀区金沙江路 1518 弄'
@@ -113,13 +111,22 @@
 	            name: '王小虎',
 	            address: '上海市普陀区金沙江路 1516 弄'
 	          }]
-
-	      this.tableData.total = backData.length%5
-	      console.log(this.tableData.total)
+      }
+    },
+    mounted() {
+	      this.tableData.total = this.backData.length%5
+				this.pageChange(1)	      
     },
     methods: {
+    	getArr(index) {
+    		// 分为以下几种情况 -- 当index的值大于等于
+    		let len = this.backData.length/5 < index ? 
+    		if(inde)
+    		this.backData
+    	},
     	pageChange(index) {
-
+    		this.tableData.list = 
+    		this.pageIndex = index
     	}
     }
 	}

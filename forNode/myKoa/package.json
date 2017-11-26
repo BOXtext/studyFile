@@ -1,0 +1,34 @@
+{
+  "name": "myKoa",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node bin/www",
+    "dev": "./node_modules/.bin/nodemon bin/www",
+    "prd": "pm2 start bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start_koa": "bin/www"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "debug": "^2.6.3",
+    "jade": "~1.11.0",
+    "koa": "^1.4.0",
+    "koa-bodyparser": "^2.5.0",
+    "koa-json": "^1.1.3",
+    "koa-logger": "^1.3.1",
+    "koa-onerror": "^1.3.1",
+    "koa-router": "^5.4.0",
+    "koa-static": "^1.5.2",
+    "koa-views": "^3.1.0",
+    "log4js": "^2.3.12"
+  },
+  "devDependencies": {
+    "http-assert": "^1.3.0",
+    "media-typer": "^0.3.0",
+    "mime-db": "^1.31.0",
+    "nodemon": "^1.8.1",
+    "on-finished": "^2.3.0",
+    "vary": "^1.1.2"
+  }
+}

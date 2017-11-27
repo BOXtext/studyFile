@@ -1,1 +1,1 @@
-users.js
+exports.getUser

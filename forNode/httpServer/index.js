@@ -2,6 +2,9 @@ const koa = require('koa')
 
 const app = new koa()
 
+const fs = require('fs')
+
+
 const main = ctx => {
 	if (ctx.request.accepts('xml')) {
     ctx.response.type = 'xml';
